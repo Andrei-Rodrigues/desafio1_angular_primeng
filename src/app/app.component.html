@@ -1,0 +1,52 @@
+<div class="center-container">
+  <div class="background-image" style="background-image: url('assets/images/forest.jpg');">
+
+    <div class="search-container">
+
+      <div class="search-input">
+        <input pInputText type="text" placeholder="Enter a city" [(ngModel)]="city" (keyup.enter)="getWeather()" />
+        <button pButton icon="pi pi-search" [loading]="loading" (click)="getWeather()"></button>
+      </div>
+
+      <div *ngIf="response" class="weather-container">
+        <div class="centered-info">
+          <h3 class="info-city">{{ response.name }}</h3>
+          <div class="info-temperature">
+            <i class="pi pi-sun info-item"></i> Temperature:
+            <p> {{ response.main.temp }}°C </p>
+          </div>
+        </div>
+
+        <div class="weeather-info">
+          <div class="info-cloud-fells-like">
+            <div class="info-cloud">
+              <p class="info-item"> {{ response.weather[0].description }}</p>
+            </div>
+            <div class="info-fells-like">
+              <p class="info-item"></p> Feels Like:
+              <p> {{ response.main.feels_like }}°C </p>
+            </div>
+          </div>
+
+          <div class="info-wind-humidity">
+            <div class="info-wind-speed">
+              <p class="info-item"></p> Wind speed:
+              <p> {{ response.wind.speed }} m/s </p>
+            </div>
+            <div class="info-humidity">
+              <p class="info-item"> Humidity:
+              <p> {{ response.main.humidity }}% </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="error" *ngIf="error">
+        <p>{{ error }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
