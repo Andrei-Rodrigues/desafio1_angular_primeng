@@ -29,7 +29,7 @@ Erro: caso ocorra algum erro na busca pela localidade, uma mensagem de erro é e
 Para rodar o projeto localmente, siga as instruções abaixo:
 
 Certifique-se de ter o Node.js e o Angular CLI instalados em sua máquina.
-Clone este repositório: git clone [URL do Repositório]
+Clone este repositório: git clone https://github.com/Andrei-Rodrigues/desafio1_angular_primeng
 Navegue até o diretório do projeto: cd weather_forecast
 Instale as dependências: npm install
 Inicie o servidor de desenvolvimento: ng serve --open
